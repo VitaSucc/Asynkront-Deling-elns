@@ -13,3 +13,18 @@ for (const film of films) {
 
     listElement.appendChild(newElement)
 }
+
+function ExamplePromise() {
+    const promise = new Promise((resolve, reject) => {
+            setTimeout(
+                () => {resolve() },
+                1000
+            )
+    })
+
+    return promise
+}
+
+console.log("Awaiting Promise")
+await ExamplePromise()
+console.log("Promise Resolved")
