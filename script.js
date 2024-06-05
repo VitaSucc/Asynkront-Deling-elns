@@ -1,1 +1,15 @@
-console.log('Hello!');
+const response = await fetch("https://ghibliapi.vercel.app/films")
+const films = await response.json()
+
+const listElement = document.getElementById("film-list")
+
+for (const film of films) {
+    console.log(film)
+
+    const newElement = document.createElement("li")
+    newElement.textContent = film.title
+
+    //listElements.appendChild(newElement)
+
+    listElement.appendChild(newElement)
+}
